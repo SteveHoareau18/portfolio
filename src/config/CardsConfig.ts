@@ -3,7 +3,7 @@ let arrowSvg = '<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" 
 export let cardsConfig = [
     {
         title: {
-            href: "#",
+            href: "/bac",
             text: "BAC S"
         },
         description: "Obtenu avec la <span class='font-bold underline'>spécialité Sciences-Ingénieurs</span> et l'<span class='underline'>option Informatique Sciences du Numérique</span> en 2020. Découvrez ce que j'ai fait pendant mon Baccalauréat.",
@@ -12,22 +12,22 @@ export let cardsConfig = [
             src: ""
         },
         readMore: {
-            href: "",
+            href: "/bac",
             text: 'En savoir plus '+arrowSvg
         }
     },
     {
         title: {
-            href: "#",
+            href: "/bts",
             text: "BTS SIO"
         },
         description: "Obtenu avec succès. Ayant choisi l'<span class='underline'>option B: Solutions Logicielles et Applications Métiers</span> en 2022. Découvrez ce que j'ai fait durant ces 2 années.",
         img: {
-            href: "#",
+            href: "/bts",
             src: "https://stevehoareau18.github.io/img/btssio.png"
         },
         readMore: {
-            href: "",
+            href: "/bts",
             text: 'En savoir plus '+arrowSvg,
         }
     },

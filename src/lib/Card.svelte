@@ -17,8 +17,8 @@
             {@html card.description}
         </p>
     </div>
-    <div class="border-t-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
-        <a href={card.readMore.href} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <div class="border-t-2 px-6 py-3 border-neutral-600 text-neutral-50">
+        <a href={card.readMore.href} class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-900 rounded-lg hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
             {@html card.readMore.text}
         </a>
     </div>

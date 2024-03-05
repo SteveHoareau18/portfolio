@@ -4,5 +4,6 @@ export type Language = {
     name: string;
     icon: Icon;
     url: string;
-    keywords: string[]
+    keywords: string[],
+    credits: string;
 }

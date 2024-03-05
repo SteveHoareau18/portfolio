@@ -1,148 +1,136 @@
-import type { Language } from "../entity/Language";
+import type { Language } from "../src/entity/Language";
 
 export let languagesConfig = [
     {
         name: "HTML",
         icon:
             {
-                url: "/HTML.png",
+                url: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","this","bac"],
-        credits: "Pixel perfect",
+        keywords: ["web","this"]
     },
     {
         name: "CSS",
         icon:
             {
-                url: "/CSS.png",
+                url: "https://cdn-icons-png.flaticon.com/128/732/732190.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","this","bac"],
-        credits: "Pixel perfect",
+        keywords: ["web","this"]
     },
     {
         name: "Git",
         icon:
             {
-                url: "/Git.png",
+                url: "https://avatars.githubusercontent.com/u/18133?s=280&v=4",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["versionning","this"],
-        credits: ""
+        keywords: ["versionning","this"]
     },
     {
         name: "Php",
         icon:
             {
-                url: "/Php.png",
+                url: "https://cdn-icons-png.flaticon.com/128/919/919830.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web"],
-        credits: "Freepik"
+        keywords: ["web"]
     },
     {
         name: "Symfony",
         icon:
             {
-                url: "/Symfony.png",
+                url: "https://avatars.githubusercontent.com/u/143937?s=280&v=4",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web"],
-        credits: "Symfony"
+        keywords: ["web"]
     },
     {
         name: "Java",
         icon:
             {
-                url: "/Java.png",
+                url: "https://java.mesexemples.com/wp-content/uploads/2011/07/images3D.jpg",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","app"],
-        credits: "java.mesexemples.com"
+        keywords: ["web","app"]
     },
     {
         name: "JavaScript",
         icon:
             {
-                url: "/JavaScript.png",
+                url: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","this"],
-        credits: "Freepik"
+        keywords: ["web","this"]
     },
     {
         name: "TypeScript",
         icon:
             {
-                url: "/TypeScript.png",
+                url: "https://cdn-icons-png.flaticon.com/128/5968/5968381.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","this"],
-        credits: "Freepik"
+        keywords: ["web","this"]
     },
     {
         name: "Svelte",
         icon:
             {
-                url: "/Svelte.png",
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","this"],
-        credits: "commons.wikimedia.org"
+        keywords: ["web","this"]
     },
     {
         name: "MySQL",
         icon:
             {
-                url: "/MySQL.png",
+                url: "https://www.stackhero.io/assets/src/images/servicesLogos/mysql.svg?9998c0bf",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["db"],
-        credits: "worldvectorlogo.com"
+        keywords: ["db"]
     },
     {
         name: "Jenkins",
         icon:
             {
-                url: "/Jenkins.png",
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["versionning"],
-        credits: "commons.wikimedia.org"
+        keywords: ["versionning"]
     },
     {
         name: "Python",
         icon:
             {
-                url: "/Python.png",
+                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/800px-Python-logo-notext.svg.png",
                 height: 10,
                 width: 10
             },
         url: "#",
-        keywords: ["web","bac"],
-        credits: "commons.wikimedia.org"
+        keywords: ["web"]
     },
 ] as Language[];

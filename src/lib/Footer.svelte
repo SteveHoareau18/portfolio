@@ -8,8 +8,8 @@
             <div class="h-2"></div>
             <div>
                 <ul>
-                    <li><a href="" class="underline text-blue-500">Accueil</a></li>
-                    <li><a href="" class="underline text-blue-500">Accueil</a></li>
+                    <li><a href="/" class="underline text-blue-500">INDEX</a></li>
+                    <li><a href="/bac" class="underline text-blue-500">BAC</a></li>
                 </ul>
             </div>
         </div>
