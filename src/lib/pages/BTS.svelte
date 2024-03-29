@@ -126,7 +126,8 @@
       Mes stages
     </h6>
     <div class="h-5"></div>
-    <div class="flex justify-around gap-4 m-2">
+    <div class="grid grid-cols-2 gap-4 m-2">
+      <!-- ###CROIX DU SUD -->
       <div class="border-gray-600 shadow-xl p-6">
         <div>
           <p class="font-bold uppercase">CROIX DU SUD</p>
@@ -195,6 +196,8 @@
           </div>
         </div>
       </div>
+
+      <!-- ###SODIPARC -->
       <div class="border-gray-600 shadow-xl p-6">
         <div>
           <p class="font-bold uppercase">SODIPARC</p>
@@ -220,25 +223,19 @@
           <span class="underline">Stagiaire</span> dans le rôle développeur
           applicatif dans une entreprise de service de transport
           <ul>
-            <li>Créer un site web avec un CMS(WordPress avec des modules),</li>
-            <li>
-              Développer la présence en ligne en faisant du SEO et en utilisant
-              Google Fiche Etablissement et Search Console
-            </li>
-            <li>
-              faire une documentation détaillée pour une utilisation facile
-              Formation des membres de l'agence, tutoriels en vidéos,
-              démonstration, etc...
-            </li>
+            <li>Créer 2 applications Python</li>
+            <li>Documentation</li>
           </ul>
         </div>
 
         <div class="px-4 py-3 flex items-center justify-between">
-          <button
+          <a
+            href="SODIPARC_réalisation.pdf"
+            target="_blank"
             class="flex-1 bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl"
           >
             VOIR PLUS
-          </button>
+          </a>
           <div class="flex items-center">
             <a href="https://sodiparc.fr/">
               <svg
