@@ -46,7 +46,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["web"],
+        keywords: ["web","bts"],
         credits: "Freepik"
     },
     {
@@ -58,7 +58,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["web"],
+        keywords: ["web","bts"],
         credits: "Symfony"
     },
     {
@@ -118,7 +118,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["db"],
+        keywords: ["db","bts"],
         credits: "worldvectorlogo.com"
     },
     {
@@ -144,5 +144,17 @@ export let languagesConfig = [
         url: "#",
         keywords: ["web","bac"],
         credits: "commons.wikimedia.org"
+    },
+    {
+        name: "VBA",
+        icon:
+            {
+                url: "/VBA.png",
+                height: 10,
+                width: 10
+            },
+        url: "#",
+        keywords: ["bts"],
+        credits: "github.com"
     },
 ] as Language[];
