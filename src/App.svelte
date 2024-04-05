@@ -9,11 +9,13 @@
   import Bts from "./lib/pages/BTS.svelte";
   import Cda from "./lib/pages/CDA.svelte";
   import { injectSpeedInsights } from "@vercel/speed-insights";
+  import { inject } from "@vercel/analytics";
 
   let url: string = "";
 
   onMount(() => {
     injectSpeedInsights();
+    inject();
     url = window.location.href;
   });
 </script>
