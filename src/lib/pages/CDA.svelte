@@ -51,16 +51,15 @@
 
       <div class="mb-4">
         <p>
-          Il comporte aussi des EPCF (épreuves pour valider les blocs pour
-          justifier les compétences aquises). Et des MSP (projet à concevoir et
-          développer et à présenter)
+          Il comporte aussi des EPCF (Evaluations Passées en Cours de
+          Formation). Et des MSP (Mises en Situations Professionnelles)
         </p>
       </div>
 
       <div>
         <p>
           Les cours sont donnés par des intervenants qui travail dans le milieu
-          privé. Certains proposent des TP.
+          privé. Certains proposent des TP(Travaux Pratiques).
         </p>
       </div>
     </div>
@@ -254,9 +253,33 @@
       Mes MSP
     </h6>
     <div class="flex justify-center gap-96">
-      <div>MSP1</div>
-      <div>MSP2</div>
-      <div>MSP3</div>
+      <div>
+        <div>
+          <div>MSP1</div>
+          <div>Gestion de ticket</div>
+        </div>
+        <div>
+          <div>
+            Application client-serveur • 2 semaines (Août-Septembre 2023)
+          </div>
+          <div>
+            <p>
+              Dévéloppé en Php Symfony, TailwindCSS pour l'UI avec un serveur
+              MySQL.
+            </p>
+            <p>
+              L'application web est une solution de ticketing interne entre
+              différents pôles d'une entreprise.
+            </p>
+            <p>Ce projet a été utilisé pour l'EPCF1</p>
+          </div>
+        </div>
+        <div class="flex justify-center gap-12">
+          <div><a href="MSP1.pdf" target="_blank">PDF</a></div>
+          <div>CODE SOURCE</div>
+          <div>PAS DE DÉMO / PAS DE LIEN DE TELECHARGEMENT</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="h-10"></div>

@@ -1,13 +1,7 @@
 <script lang="ts">
   import "./app.css";
   import Navbar from "./lib/Navbar.svelte";
-  import Slider from "./lib/Slider.svelte";
-  import { type Language } from "./entity/Language";
-  import { languagesConfig } from "./config/LanguagesConfig";
   import Footer from "./lib/Footer.svelte";
-  import Card from "./lib/Card.svelte";
-  import { type _Card } from "./entity/_Card";
-  import { cardsConfig } from "./config/CardsConfig";
 
   import { onMount } from "svelte";
   import Index from "./lib/pages/Index.svelte";
