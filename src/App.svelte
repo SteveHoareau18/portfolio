@@ -8,6 +8,7 @@
   import Bac from "./lib/pages/BAC.svelte";
   import Bts from "./lib/pages/BTS.svelte";
   import Cda from "./lib/pages/CDA.svelte";
+  import { SpeedInsights } from "@vercel/speed-insights/next";
 
   let url: string = "";
 

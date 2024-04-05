@@ -27,6 +27,7 @@
     "vite": "^5.1.7"
   },
   "dependencies": {
-    "@splidejs/svelte-splide": "^0.2.9"
+    "@splidejs/svelte-splide": "^0.2.9",
+    "@vercel/speed-insights": "^1.0.10"
   }
 }
