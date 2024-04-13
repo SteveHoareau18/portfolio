@@ -11,12 +11,12 @@
   import { injectSpeedInsights } from "@vercel/speed-insights";
   import { inject } from "@vercel/analytics";
 
-  let url: string = "";
+  // let url: string = "";
 
   onMount(() => {
     injectSpeedInsights();
     inject();
-    url = window.location.href;
+    // url = window.location.href;
   });
 </script>
 
@@ -24,15 +24,17 @@
   <Navbar></Navbar>
 
   <div class="h-20"></div>
-  {#if url.endsWith("/bac")}
+  <!-- {#if url.endsWith("/bac")}
     <Bac></Bac>
   {:else if url.endsWith("/bts")}
     <Bts></Bts>
   {:else if url.endsWith("/cda")}
     <Cda></Cda>
   {:else}
-    <Index></Index>
-  {/if}
+    
+  {/if} -->
+
+  <Index></Index>
 
   <Footer></Footer>
 </main>
