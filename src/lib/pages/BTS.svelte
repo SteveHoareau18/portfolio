@@ -22,12 +22,12 @@
 
 <main class="text-center">
   <Navbar></Navbar>
-  <div>
-    <h4 class="font-bold text-2xl">
+  <div class="mt-5">
+    <h4 class="font-bold text-2xl mb-5">
       Brevet Technicien Supérieur Services Informatiques aux Organisations
       option Solutions Logicielles Applications Métiers: Obtenu ✅
     </h4>
-    <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white">
+    <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white mt-5">
       <p class="text-pretty text-2xl underline">
         Voici une liste des langages que j'ai appris pendant le BTS SIO :
       </p>
@@ -35,7 +35,7 @@
       <Slider showIconsPerPage={3} languagesIcon={icons}></Slider>
     </div>
     <div class="h-5"></div>
-    <div class="bg-gray-100 p-8 ml-96 mr-96 rounded-2xl">
+    <div class="bg-gray-100 p-8 md:ml-96 md:mr-96 rounded-2xl">
       <div class="text-center flex justify-center">
         <img src="BTS.png" alt="BTS SIO" />
       </div>
@@ -130,7 +130,7 @@
         Mes stages
       </h6>
       <div class="h-5"></div>
-      <div class="grid grid-cols-2 gap-4 m-2">
+      <div class="grid md:grid-cols-2 gap-4 m-2">
         <!-- ###CROIX DU SUD -->
         <div class="border-gray-600 shadow-xl p-6">
           <div>
@@ -204,7 +204,7 @@
         </div>
 
         <!-- ###SODIPARC -->
-        <div class="border-gray-600 shadow-xl p-6">
+        <div class="border-gray-600 shadow-xl p-6 sm:mt-5">
           <div>
             <p class="font-bold uppercase">SODIPARC</p>
             <p class="flex justify-center gap-2">
