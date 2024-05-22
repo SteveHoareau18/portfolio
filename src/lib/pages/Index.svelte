@@ -18,6 +18,17 @@
   let allCards: _Card[] = cardsConfig;
 </script>
 
+<div>
+  Attention, ce site est encore en cours de développement. Si vous reperez un
+  bug, une erreur, merci de me contacter par mail <a
+    href="mailto:steve.hoareau1@gmail.com"
+    class="link">steve.hoareau1@gmail.com</a
+  >
+  Lien vers l'ancien site :
+  <a href="https://stevehoareau18.github.io/index2.html" class="link"
+    >https://stevehoareau18.github.io</a
+  >
+</div>
 <h2 class="text-3xl">Mon parcours pédagogique</h2>
 <div class="h-14"></div>
 <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white">
