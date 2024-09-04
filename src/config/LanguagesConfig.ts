@@ -26,6 +26,30 @@ export let languagesConfig = [
         credits: "Pixel perfect",
     },
     {
+        name: "Tailwind",
+        icon:
+            {
+                url: "/Tailwind.png",
+                height: 10,
+                width: 10
+            },
+        url: "#",
+        keywords: ["this","cda"],
+        credits: "commons.wikimedia.org",
+    },
+    {
+        name: "Docker",
+        icon:
+            {
+                url: "/Docker.png",
+                height: 10,
+                width: 10
+            },
+        url: "#",
+        keywords: ["cda"],
+        credits: "fr.wikipedia.org",
+    },
+    {
         name: "Git",
         icon:
             {
@@ -34,8 +58,8 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["versionning","this"],
-        credits: ""
+        keywords: ["versionning","this","cda"],
+        credits: "fr.wikipedia.org"
     },
     {
         name: "Php",
@@ -46,7 +70,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["web","bts"],
+        keywords: ["web","bts","cda"],
         credits: "Freepik"
     },
     {
@@ -58,7 +82,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["web","bts"],
+        keywords: ["web","bts", "cda"],
         credits: "Symfony"
     },
     {
@@ -130,7 +154,7 @@ export let languagesConfig = [
                 width: 10
             },
         url: "#",
-        keywords: ["versionning"],
+        keywords: ["cda"],
         credits: "commons.wikimedia.org"
     },
     {
