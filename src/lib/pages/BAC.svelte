@@ -11,12 +11,12 @@
 
 <main class="text-center">
   <Navbar></Navbar>
-  <div>
+  <div class="mt-5">
     <h4 class="font-bold text-2xl">
       Baccalauréat Scientifique Sciences-Ingénieurs Spécialité Informatique
       Sciences du Numérique: Obtenu ✅
     </h4>
-    <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white">
+    <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white mt-5">
       <p class="text-pretty text-2xl underline">
         Voici une liste des langages que j'ai appris pendant la terminale :
       </p>

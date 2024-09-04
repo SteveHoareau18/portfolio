@@ -43,7 +43,7 @@
     Steve HOAREAU, 22 ans. Passionné de développement, de jeux vidéos et
     d'anime.
   </p>
-  <div class="flex justify-center gap-24 mt-2">
+  <div class="flex justify-center md:gap-24 mt-2 mb gap-16">
     <a href="https://www.linkedin.com/in/steve-hoareau" target="_blank"
       ><img src="LinkedIn.png" class="h-10 w-10" alt="LinkedIn" /></a
     >

@@ -29,7 +29,7 @@
     </h4>
     <div class="bg-slate-600 md:ml-52 md:mr-52 p-4 rounded-3xl text-white">
       <p class="text-pretty text-2xl underline">
-        Voici une liste des langages que j'ai appris pendant la formation :
+        Voici une liste de technologie que j'ai appris pendant la formation :
       </p>
       <div class="h-10"></div>
       <Slider showIconsPerPage={3} languagesIcon={icons}></Slider>
@@ -216,7 +216,7 @@
           <div>
             <span class="underline">Alternant développeur web</span>
             <ul>
-              <li>Maintenir une application web JQuery,</li>
+              <li>Maintenir une application web Php & JQuery,</li>
               <li>Conception de maquettes avec Whimsical,</li>
               <li>Création de procédures et fonctions MySQL</li>
             </ul>
@@ -255,34 +255,37 @@
       <h6
         class="text-2xl font-bold m-5 mt-10 bg-slate-400 text-black rounded uppercase"
       >
-        Mes MSP
+        Mon projet final
       </h6>
       <div class="flex justify-center gap-96">
         <div>
           <div>
-            <div>MSP1</div>
-            <div>Gestion de ticket</div>
+            <div>PLATEFORME TICKETING</div>
           </div>
           <div>
             <div>
-              Application client-serveur • 2 semaines (Août-Septembre 2023)
+              Application client-serveur organisée en couche • 2 semaines (5 au 16 Aout 2024)
             </div>
             <div>
               <p>
-                Dévéloppé en Php Symfony, TailwindCSS pour l'UI avec un serveur
+                Dévéloppé en Php Symfony, TailwindCSS pour l'UI avec un serveur de gestion de base de données relationnelle
                 MySQL.
+              </p>
+              <p>
+                Mise en production avec une démarches DevOps CI/CD en local (en utilisant DockerCompose) et avec GitHub Actions pour valider
+                les tests unitaires et Jenkins pour le déploiement.
               </p>
               <p>
                 L'application web est une solution de ticketing interne entre
                 différents pôles d'une entreprise.
               </p>
-              <p>Ce projet a été utilisé pour l'EPCF1</p>
+              <p>Ce projet a été utilisé pour l'EPCF1 et pour l'examen final en se basant sur le réferenciel d'évaluation</p>
             </div>
           </div>
           <div class="flex justify-center gap-12">
-            <div><a href="MSP1.pdf" target="_blank">PDF</a></div>
-            <div>CODE SOURCE</div>
-            <div>PAS DE DÉMO / PAS DE LIEN DE TELECHARGEMENT</div>
+            <div><a href="REV.pdf" class="underline color-blue-500" target="_blank">Référenciel d'évaluation</a></div>
+            <div><a href="https://github.com/SteveHoareau18/Ticketing" class="underline color-blue-500" target="_blank">CODE SOURCE</a></div>
+            <div><a href="PLATEFORME TICKETING.pdf" class="underline color-blue-500" target="_blank">PDF</a></div>
           </div>
         </div>
       </div>

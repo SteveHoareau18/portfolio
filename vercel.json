@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/cda",
-      "dest": "src/lib/pages/CDA.svelte"
-    }
-  ]
-}
