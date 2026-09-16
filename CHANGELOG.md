@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/SteveHoareau18/portfolio/compare/v1.0.0...v1.0.1) (2026-09-16)
+
+
+### Bug Fixes
+
+* /app/node_modules/path-to-regexp/dist/index.js:108 ([b90d0fe](https://github.com/SteveHoareau18/portfolio/commit/b90d0fe29c34f59cf65fd56e9063109950892f78))
+
 # 1.0.0 (2026-09-16)
 
 
