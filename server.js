@@ -100,7 +100,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(join(__dirname, 'dist')));
 
     // Serve index.html for all other routes (SPA support)
-    app.get('*', (req, res) => {
+    app.get('{*splat}', (req, res) => {
         res.sendFile(join(__dirname, 'dist', 'index.html'));
     });
 }
