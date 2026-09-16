@@ -1,0 +1,224 @@
+name: DevSecOps CI/CD & Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+  issues: write
+  security-events: write
+
+jobs:
+  # =========================================================
+  # DEVSECOPS SECURITY SCANS
+  # =========================================================
+  sast-semgrep:
+    name: SAST - Semgrep Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep SAST Scan
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: >-
+            p/security-audit
+            p/owasp-top-10
+            p/javascript
+        env:
+          SEMGREP_RULES: p/security-audit p/owasp-top-10 p/javascript
+
+  iac-scan:
+    name: IaC - Trivy Configuration Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan IaC (Dockerfile, docker-compose)
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'config'
+          hide-progress: true
+          format: 'table'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+
+  secret-scanning:
+    name: Secrets - Gitleaks Secret Scanner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Scan for committed secrets
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  sca-dependency-audit:
+    name: SCA - NPM Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit NPM dependencies
+        run: npm audit --audit-level=high
+
+  # =========================================================
+  # SEMANTIC RELEASE (Merge dev into main)
+  # =========================================================
+  semantic-release:
+    name: Semantic Release & Changelog
+    runs-on: ubuntu-latest
+    needs:
+      - sast-semgrep
+      - iac-scan
+      - secret-scanning
+      - sca-dependency-audit
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    outputs:
+      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # =========================================================
+  # BUILD, CONTAINER SCAN & PUSH TO GHCR
+  # =========================================================
+  build-and-push:
+    name: Build, Scan & Push Docker Image
+    runs-on: ubuntu-latest
+    needs:
+      - sast-semgrep
+      - iac-scan
+      - secret-scanning
+      - sca-dependency-audit
+      - semantic-release
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image locally
+        run: |
+          docker build -t ghcr.io/stevehoareau18/portfolio:latest .
+
+      - name: Scan Docker Image for Vulnerabilities (Trivy)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ghcr.io/stevehoareau18/portfolio:latest'
+          format: 'table'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push Docker Image to GHCR
+        run: |
+          docker push ghcr.io/stevehoareau18/portfolio:latest
+
+  # =========================================================
+  # DEPLOYMENT (SCP & SSH & HEALTHCHECK)
+  # =========================================================
+  deploy:
+    name: Deploy to Remote Server & Healthcheck
+    runs-on: ubuntu-latest
+    needs:
+      - build-and-push
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Key & Known Hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H -p ${{ secrets.DEPLOY_PORT || '22' }} ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Prepare remote deployment directory
+        run: |
+          ssh -i ~/.ssh/id_rsa -p ${{ secrets.DEPLOY_PORT || '22' }} ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
+            "mkdir -p ${{ secrets.DEPLOY_PATH || '~/portfolio' }}"
+
+      - name: Send docker-compose.yml via SCP
+        run: |
+          scp -i ~/.ssh/id_rsa -P ${{ secrets.DEPLOY_PORT || '22' }} \
+            docker-compose.yml ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH || '~/portfolio' }}/docker-compose.yml
+
+      - name: Pull and start containers on remote host
+        run: |
+          ssh -i ~/.ssh/id_rsa -p ${{ secrets.DEPLOY_PORT || '22' }} ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} \
+            "cd ${{ secrets.DEPLOY_PATH || '~/portfolio' }} && docker compose pull && docker compose up -d --remove-orphans"
+
+      - name: Application Healthcheck (stevehoareau.fr/health)
+        run: |
+          echo "Démarrage de la vérification de santé sur https://stevehoareau.fr/health..."
+          MAX_RETRIES=15
+          DELAY_SECONDS=4
+
+          for ((i=1; i<=MAX_RETRIES; i++)); do
+            HTTP_STATUS=$(curl -k -s -o /dev/null -w "%{http_code}" https://stevehoareau.fr/health || true)
+            echo "Tentative $i/$MAX_RETRIES - Code HTTP reçu : $HTTP_STATUS"
+
+            if [ "$HTTP_STATUS" = "200" ]; then
+              echo "✅ Healthcheck validé avec succès (HTTP 200 OK) !"
+              exit 0
+            fi
+
+            sleep $DELAY_SECONDS
+          done
+
+          echo "❌ Échec du healthcheck : https://stevehoareau.fr/health n'a pas répondu HTTP 200 après $((MAX_RETRIES * DELAY_SECONDS))s."
+          exit 1
