@@ -15,14 +15,14 @@
         >
           SH
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col min-w-0 pr-2">
           <span
-            class="font-bold text-[var(--space-indigo)] text-sm sm:text-base leading-tight"
+            class="font-bold text-[var(--space-indigo)] text-sm sm:text-base leading-tight truncate"
             >Steve HOAREAU</span
           >
           <span
-            class="text-xs text-[var(--text-muted)] font-medium leading-tight"
-            >Assistant Chef de Projet IT & Dev Web FullStack</span
+            class="text-xs text-[var(--text-muted)] font-medium leading-tight truncate"
+            >Conduite du Changement IT • Chef de Projet IT • Business Analyst</span
           >
         </div>
       </div>
@@ -101,6 +101,14 @@
           class="glass p-6 sm:p-8 md:p-10 border-[var(--dust-grey)] bg-[#fdfdfd] shadow-sm mb-12"
         >
           <div class="flex flex-col gap-4 text-left">
+            <!-- Statut de recherche active -->
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 text-xs sm:text-sm font-semibold w-fit"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+              En recherche d’une opportunité : Conduite du Changement IT / Assistant Chef de Projet IT / IT Business Analyst dès Décembre 2026
+            </div>
+
             <div class="flex items-center gap-2 flex-wrap">
               <span
                 class="inline-flex items-center gap-1.5 px-3 py-1 bg-[var(--french-blue)]/10 text-[var(--french-blue)] font-bold text-xs rounded-full"
@@ -110,24 +118,19 @@
               <span
                 class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 text-emerald-800 font-bold text-xs rounded-full"
               >
-                💼 Alternance URSSAF (2024–2026)
+                💼 Alternance Urssaf (2024–2026)
               </span>
               <span
                 class="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-500/10 text-blue-800 font-bold text-xs rounded-full"
               >
-                🚀 Disponible dès Novembre 2026
+                🚀 Disponible dès Décembre 2026
               </span>
             </div>
 
             <p
               class="text-base sm:text-lg text-[var(--carbon-black)] leading-relaxed font-normal"
             >
-              Actuellement
-              <strong>Assistant Chef de Projet Développeur</strong> en
-              alternance à l'URSSAF à Montpellier, j'allie expertise technique
-              (Web FullStack & DevOps) et compétences en pilotage de projets IT
-              (analyse des besoins, Power Apps, Power BI, acculturation IA et
-              conduite du changement).
+              Ayant achevé mon alternance d’<strong>Assistant Chef de Projet Développeur</strong> à l'Urssaf Languedoc-Roussillon de Montpellier le 30 septembre 2026, je suis actuellement <strong>à la recherche d’une opportunité en Conduite du changement IT, Assistant Chef de projet IT ou IT Business Analyst disponible dès décembre 2026</strong>. J'allie expertise technique (Web FullStack & DevOps) et compétences en pilotage de projets IT (analyse des besoins, Power Apps, Power BI, acculturation IA et conduite du changement).
             </p>
 
             <blockquote
@@ -1106,7 +1109,7 @@ const formations = [
 const alternances = [
   {
     position: "Alternant Assistant Chef de projet Développeur",
-    company: "URSSAF Languedoc-Roussillon, Montpellier",
+    company: "Urssaf Languedoc-Roussillon, Montpellier",
     year: "Octobre 2024 – Septembre 2026 (2 ans)",
     description:
       "Participation au pilotage et au suivi de grands projets IT internes de la sécurité sociale.",
