@@ -46,8 +46,17 @@
         />
       </div>
       <h1 class="text-2xl font-bold mb-1 text-white">Steve HOAREAU</h1>
-      <p class="text-sm font-semibold text-[var(--alice-blue)] mb-1 opacity-95">
-        Assistant Chef de Projet IT & Développeur
+      <p
+        class="text-xs uppercase tracking-wider font-bold text-emerald-300 mb-1"
+      >
+        En recherche d'opportunité
+      </p>
+      <p
+        class="text-sm font-semibold text-[var(--alice-blue)] mb-2 opacity-95 leading-snug"
+      >
+        Conduite du Changement IT<br />
+        Assistant Chef de Projet IT<br />
+        IT Business Analyst
       </p>
       <p class="text-sm text-[var(--alice-blue)] opacity-80 mb-2">
         24 ans • Montpellier, France
@@ -59,7 +68,7 @@
           class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
           aria-hidden="true"
         ></span>
-        Disponible dès Novembre 2026
+        Disponible dès Décembre 2026
       </div>
     </div>
 
@@ -204,7 +213,7 @@
         >
           <span aria-hidden="true" class="text-base">🚀</span>
           <span class="font-medium text-white text-xs leading-tight"
-            >Autonomie</span
+            >Autonome</span
           >
         </div>
         <div
@@ -224,24 +233,19 @@
           >
         </div>
         <div
-          class="col-span-2 p-3 bg-[var(--space-indigo)]/80 rounded-xl border border-white/20 flex flex-col gap-1 transition-all shadow-sm hover:border-white/40"
+          class="p-2.5 bg-[var(--space-indigo)]/80 rounded-xl border border-white/20 flex items-center gap-2 transition-all shadow-sm hover:border-white/40"
         >
-          <div class="flex items-center gap-2">
-            <span aria-hidden="true" class="text-base">👨‍🏫</span>
-            <span class="font-medium text-white text-xs leading-tight"
-              >Capacité pédagogique</span
-            >
-          </div>
-          <span class="text-xs text-[var(--alice-blue)] pl-7 opacity-90"
-            >Animation d’ateliers & transmission</span
+          <span aria-hidden="true" class="text-base">👨‍🏫</span>
+          <span class="font-medium text-white text-xs leading-tight"
+            >Pédagogue</span
           >
         </div>
         <div
-          class="col-span-2 p-2.5 bg-[var(--space-indigo)]/80 rounded-xl border border-white/20 flex items-center gap-2 transition-all shadow-sm hover:border-white/40"
+          class="p-2.5 bg-[var(--space-indigo)]/80 rounded-xl border border-white/20 flex items-center gap-2 transition-all shadow-sm hover:border-white/40"
         >
           <span aria-hidden="true" class="text-base">🔍</span>
           <span class="font-medium text-white text-xs leading-tight"
-            >Curiosité & Rigueur</span
+            >Curieux et rigoureux</span
           >
         </div>
       </div>
@@ -270,7 +274,9 @@
         class="bg-white text-[var(--carbon-black)] rounded-2xl shadow-2xl border border-[var(--dust-grey)] w-full max-w-sm sm:max-w-md p-6 relative flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-150"
       >
         <!-- En-tête de la modale -->
-        <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+        <div
+          class="flex items-center justify-between pb-3 border-b border-gray-100"
+        >
           <div class="flex items-center gap-2.5">
             <div
               class="w-9 h-9 rounded-xl bg-[var(--french-blue)]/10 text-[var(--french-blue)] flex items-center justify-center"
@@ -300,7 +306,9 @@
               >
                 Dépôts de code
               </h3>
-              <p class="text-xs text-gray-500">Accéder aux plateformes de code source</p>
+              <p class="text-xs text-gray-500">
+                Accéder aux plateformes de code source
+              </p>
             </div>
           </div>
           <button
@@ -353,7 +361,9 @@
               </svg>
               <div class="text-left leading-tight">
                 <span class="block text-sm font-bold">Github</span>
-                <span class="block text-xs text-gray-300 font-normal">github.com/SteveHoareau18</span>
+                <span class="block text-xs text-gray-300 font-normal"
+                  >github.com/SteveHoareau18</span
+                >
               </div>
             </div>
             <svg
@@ -397,7 +407,9 @@
               </svg>
               <div class="text-left leading-tight">
                 <span class="block text-sm font-bold">Gitlab self-host</span>
-                <span class="block text-xs text-orange-100 font-normal">gitlab.stevehoareau.fr/SteveHoareauYnov</span>
+                <span class="block text-xs text-orange-100 font-normal"
+                  >gitlab.stevehoareau.fr/SteveHoareauYnov</span
+                >
               </div>
             </div>
             <svg
