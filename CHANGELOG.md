@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/SteveHoareau18/portfolio/compare/v1.0.1...v1.1.0) (2026-10-23)
+
+
+### Features
+
+* **ci:** update node and npm ver ([5460156](https://github.com/SteveHoareau18/portfolio/commit/54601561eb71edfe473d6b47eefec0fe43d5c741))
+* end of urssaf ([7816a78](https://github.com/SteveHoareau18/portfolio/commit/7816a783453c9baee51765bdd3a3eaf6ff491fcb))
+
 ## [1.0.1](https://github.com/SteveHoareau18/portfolio/compare/v1.0.0...v1.0.1) (2026-09-16)
 
 
